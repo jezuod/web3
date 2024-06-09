@@ -1,59 +1,49 @@
-## Getting Started
 
-Create a project using this example:
+# Creación e implementación de contratos
+
+Pasos  a seguir para poder subir los contratos a [ThirdWeb](https://thirdweb.com/)
+
+
+## Despliegue
+
 
 ```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
+  npx thirdweb@latest create --contract
 ```
 
-You can start editing the page by modifying `contracts/Contract.sol`.
+Seleccionamos Hardhat
 
-To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) to learn more.
+Ponemos un nombre cualquiera al contrato y no elegimos ninguna plantilla
 
-## Building the project
+Cogemos los archivos de este GitHub y los arrastramos dentro de nuestro directorio
 
-After any changes to the contract, run:
+
+
+
+## Comandos
 
 ```bash
-npm run build
-# or
-yarn build
+  npm install dotenv
+  npm install @openzeppelin/contracts
 ```
+    
+# Pasos
 
-to compile your contracts. This will also detect the [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) detected on your contract.
+Una vez hecho todo debemos hacer lo siguiente :
 
-## Deploying Contracts
+1. Crear el archivo .env y poner nuestra PRIVATE_KEY de nuestra cartera
 
-When you're ready to deploy your contracts, just run one of the following command to deploy you're contracts:
+2. Obtener API de [Alchemy](https://dashboard.alchemy.com/apps), en nuestro caso usaremos Sepolia
 
+3. En el archivo **hardhat.config.js** escribir una nueva entrada dentro de **networks** con el siguiente formato:
+*sepolia: {
+      url: '' ,
+      accounts: process.env.PRIVATE_KEY
+    }*
+
+4. En el archivo **hardhat.config.js** escribir la url de la API obtenida
+
+5. Usar el siguente comando y seleccionar los contratos que queremos subir :
 ```bash
-npm run deploy
-# or
-yarn deploy
+  npm run deploy
 ```
-
-## Releasing Contracts
-
-If you want to release a version of your contracts publicly, you can use one of the followings command:
-
-```bash
-npm run release
-# or
-yarn release
-```
-
-
-## Instalation web3_edu
-npx thirdweb@latest create --contract
-
-npm install dotenv
-
-crear .env y poner la clave privada de nuestra cuenta en metamask
-
-registrarse en alchemy, crear un sepolia rpc endpoint
-
-npm run deploy
-
-npm install @openzeppelin/contracts
-
-npm run publish --> seleccionar contratos
