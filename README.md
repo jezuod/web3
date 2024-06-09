@@ -42,6 +42,18 @@ npm run release
 yarn release
 ```
 
-## Join our Discord!
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+## Instalation web3_edu
+npx thirdweb@latest create --contract
+
+npm install dotenv
+
+crear .env y poner la clave privada de nuestra cuenta en metamask
+
+registrarse en alchemy, crear un sepolia rpc endpoint
+
+npm run deploy
+
+npm install @openzeppelin/contracts
+
+npm run publish --> seleccionar contratos

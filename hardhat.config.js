@@ -12,6 +12,10 @@ module.exports = {
     },
   },
   networks: {
+    sepolia: {
+      url: 'https://eth-sepolia.g.alchemy.com/v2/M57n287r1Xu4W1mW4wAgpCXa8cZe-3iH' ,
+      accounts: process.env.PRIVATE_KEY
+    },
     zksync_testnet: {
       url: "https://zksync2-testnet.zksync.dev",
       ethNetwork: "goerli",
@@ -32,7 +36,7 @@ module.exports = {
     tests: "./test",
   },
   solidity: {
-    version: "0.8.17",
+    version: "0.8.20",
     settings: {
       optimizer: {
         enabled: true,
